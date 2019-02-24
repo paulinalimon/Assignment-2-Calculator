@@ -18,11 +18,13 @@ package cse360assign2;
 public class Calculator {
 
 	private int total;
+	private String history = "";
 	/**
 	 * Class constructor
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = "0";		//String to return the calculation moves
 	}
 	/**
 	 * 
@@ -40,6 +42,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total = total + value;
+		history = history + " + " + value;
 	}
 	
 	
@@ -49,6 +52,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	
@@ -58,6 +62,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total = value * total;
+		history = history + " * " + value;
 	}
 	
 	
@@ -73,6 +78,7 @@ public class Calculator {
 		} else {
 			total = total / value;
 		}
+		history = history + " / " + value;
 	}
 	
 	
@@ -80,6 +86,6 @@ public class Calculator {
 	 * getHistory returns the actions done by the user.
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
